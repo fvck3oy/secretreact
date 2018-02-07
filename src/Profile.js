@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import boy from './pic/boy.jpg'
 import './App.css';
+import Post from './Post'
 
 class Profile extends Component {
 
@@ -35,6 +36,8 @@ class Profile extends Component {
          Name : {this.state.name}<br/>
          NickName : {this.state.nickname}<br/>
          Age :  {this.state.age}
+
+         <Post name="BoyRealLife" text= "abcd"/>
 
         </p>
       </div>
