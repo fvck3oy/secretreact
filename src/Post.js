@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PostList from './PostList'
 
 class Post extends Component {
 
@@ -20,12 +19,9 @@ class Post extends Component {
     render() {
         const { name, text } = this.props;
         return (
-            <div>{name} <br /> {text}
-
-                <hr />
-
-                
-            <PostList name={name} text={text} />
+            <div>
+                <h3>Name: { name !== "" ? name : 'Anonymous' }</h3>
+                <h5>Text: { text }</h5>
             </div>
         )
     }

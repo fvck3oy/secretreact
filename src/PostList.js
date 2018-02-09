@@ -1,30 +1,35 @@
 import React, { Component } from 'react';
-
+import Post from './Post'
 
 class PostList extends Component {
 
+    constructor(props) {
+        super(props)
+    }
 
     render() {
         
-        const numbers = [1, 2, 3, 4, 5];
-        const listItems = numbers.map((number) =>
-            <li>{number}</li>);
+        // const numbers = [1, 2, 3, 4, 5];
+        // const listItems = numbers.map((number) =>
+        //     <li>{number}</li>);
 
-        const { name, text } = this.props;
+        // {/* PostList  */}
+        // {/* วนแสดงค่า ที่เก็บอยู่ใน Array numbers 
+        //             ** ไม่ใช่ วนแสดงComponent [ทำไม่เป็น 555 งงโจทย์ด้วย อาจจะเป็นเพราะยังไม่ค่อยรู้เรื่อง]
+        //         */}
+        // {/* {listItems} */}
+
+
+        // {/* รับค่ามาจากการเรียกใช้ PostList */}
+        // {/* {name} {text} */}
+        const { posts } = this.props;
         return (
-
-            <div>
-                PostList 
-                {/* วนแสดงค่า ที่เก็บอยู่ใน Array numbers 
-                            ** ไม่ใช่ วนแสดงComponent [ทำไม่เป็น 555 งงโจทย์ด้วย อาจจะเป็นเพราะยังไม่ค่อยรู้เรื่อง]
-                */}
-                {listItems}
-
-
-                {/* รับค่ามาจากการเรียกใช้ PostList */}
-                {name} {text}
-            </div>
-        );
+            posts ? posts.map(post => {
+                return (
+                    <Post name={post.name} text={post.text} />
+                )
+            }) : ''
+        )
     }
 }
 

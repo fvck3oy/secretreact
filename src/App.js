@@ -4,6 +4,7 @@ import logo2 from './logo2.svg';
 import './App.css';
 import boy from './pic/boy.jpg'
 import Post from './Post'
+import PostList from './PostList'
 
 
 class App extends Component {
@@ -15,13 +16,30 @@ class App extends Component {
       name: "Pumin Swangjang",
       nickname: "Boy",
       age: 22,
-
+      posts: [
+        {
+          id: 1,
+          name: "Pozterz",
+          text: "xD"
+        },
+        {
+          id: 2,
+          name: "",
+          text: "xD"
+        },
+        {
+          id: 3,
+          name: "",
+          text: "Hello from Anonymous."
+        },
+      ]
     };
 
 
   }
 
   render() {
+    const { posts } = this.state
     return (
       <div className="App">
         <header className="App-header">
@@ -51,11 +69,7 @@ class App extends Component {
           Age :  {this.state.age}
 
           <hr />
-          <Post name="BoyRealLife" text="abcd" />
-          
-
-
-
+          <PostList posts={posts} />
         </p>
       </div>
     );
