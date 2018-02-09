@@ -2,8 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
-import Profile from './Profile';
+import App from './App';
 
 
 
-ReactDOM.render(<Profile />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'));
