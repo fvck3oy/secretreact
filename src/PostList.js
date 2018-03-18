@@ -26,7 +26,8 @@ class PostList extends Component {
         return (
             posts ? posts.map(post => {
                 return (
-                    <Post name={post.name} text={post.text} />
+                    <Post id={post.id} name={post.name} text={post.text} />
+                  
                 )
             }) : ''
         )

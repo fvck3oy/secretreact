@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
-import logo2 from './logo2.svg';
 import './App.css';
 import boy from './pic/boy.jpg'
 import Post from './Post'
@@ -44,15 +43,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo2} className="App-logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo2} className="App-logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo2} className="App-logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo2} className="App-logo" alt="logo" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <img src={logo2} className="App-logo" alt="logo" />
+          
 
           <h1 className="App-title">Welcome to Profile Boy RealLife</h1>
         </header>

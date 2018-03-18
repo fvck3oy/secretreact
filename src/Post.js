@@ -2,13 +2,7 @@ import React, { Component } from 'react';
 
 class Post extends Component {
 
-
-
-
-
     // render() {
-
-
     //     // return (
     //     //     <div>   <hr/>
     //     //             ทดลองใช้ props <br/><br/>
@@ -17,10 +11,10 @@ class Post extends Component {
 
 
     render() {
-        const { name, text } = this.props;
+        const { id, name, text } = this.props;
         return (
             <div>
-                <h3>Name: { name !== "" ? name : 'Anonymous' }</h3>
+                <h3>Name: {id }.{ name !== "" ? name : 'Anonymous' }</h3>
                 <h5>Text: { text }</h5>
             </div>
         )
@@ -32,9 +26,6 @@ class Post extends Component {
 //        <div>{ name ? name : 'Anonymous' } <br/> { text } </div>
 //     )
 //   }
-
-
-
 //     );
 
 // }
