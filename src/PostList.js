@@ -3,9 +3,9 @@ import Post from './Post'
 
 class PostList extends Component {
 
-    constructor(props) {
-        super(props)
-    }
+    // constructor() {
+    //     super();
+    // }
 
     render() {
         

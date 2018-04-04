@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import boy from './pic/boy.jpg'
-import Post from './Post'
+
 import PostList from './PostList'
 import axios from 'axios'
 
@@ -46,8 +46,18 @@ class App extends Component {
       .then(res => {
         const persons = res.data;
         this.setState({ persons });
+
       })
   }
+
+
+  handleOnChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    })
+  }
+
+ 
 
   render() {
     const { posts } = this.state
@@ -76,13 +86,33 @@ class App extends Component {
           <hr />
           <PostList posts={posts} />
         </p>
-        
 
-        { this.state.persons.map(person => <li>{person.userId}</li>)}
+
+        {/* event */}<br /><br />
+
+        ShowChangeName : {this.state.name2}<br />
+        ShowComment : {this.state.comment}
+        <form onSubmit={this.handleSubmit}>
+          <label>
+            Name:
+        <input type="text" name="name2" onChange={e => this.handleOnChange(e)} value={this.state.name} />
+            Comment:
+        <input type="text" name="comment" onChange={e => this.handleOnChange(e)} value={this.state.name} />
+
+          </label>
+          <button onClick={this.addClicked} type="submit">Add</button>
+        </form>
+
+
+
+        < br /> <br />
+        <hr />
+        {this.state.persons.map(person => <li>{person.userId}</li>)}
 
       </div>
     );
   }
+
 }
 
 export default App;
