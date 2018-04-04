@@ -4,7 +4,7 @@ import './App.css';
 import boy from './pic/boy.jpg'
 import Post from './Post'
 import PostList from './PostList'
-
+import axios from 'axios'
 
 class App extends Component {
 
@@ -34,16 +34,30 @@ class App extends Component {
       ]
     };
 
+    this.state = {
+      persons: []
+    }
 
+
+  }
+
+  componentDidMount() {
+    axios.get(`https://jsonplaceholder.typicode.com/posts`)
+      .then(res => {
+        const persons = res.data;
+        this.setState({ persons });
+      })
   }
 
   render() {
     const { posts } = this.state
     return (
+
+
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          
+
 
           <h1 className="App-title">Welcome to Profile Boy RealLife</h1>
         </header>
@@ -62,6 +76,10 @@ class App extends Component {
           <hr />
           <PostList posts={posts} />
         </p>
+        
+
+        { this.state.persons.map(person => <li>{person.userId}</li>)}
+
       </div>
     );
   }
